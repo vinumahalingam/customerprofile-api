@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: sit
+  application:
+    name: customerprofile-api
+
+  config:
+    import: optional:configserver:http://localhost:9090
+    username: postgres
+    password: postgres
+
+logging:
+  level:
+    com.customerprofile: DEBUG
+    org.hibernate.SQL: DEBUG
