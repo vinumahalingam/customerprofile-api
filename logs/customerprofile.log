@@ -1539,3 +1539,439 @@ Add a spring.config.import=configserver: property to your configuration.
 2026-03-29T22:03:50.491-07:00 DEBUG 9408 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.SQL                        : select cp1_0.customer_id,cp1_0.address_line1,cp1_0.address_line2,cp1_0.city,cp1_0.country,cp1_0.email,cp1_0.first_name,cp1_0.last_name,cp1_0.phone,cp1_0.postal_code,cp1_0.state from customerprofile cp1_0 where cp1_0.first_name=? and cp1_0.last_name=?
 2026-03-29T22:03:59.269-07:00 DEBUG 9408 --- [customerprofile-api] [http-nio-8085-exec-9] org.hibernate.SQL                        : select cp1_0.customer_id,cp1_0.address_line1,cp1_0.address_line2,cp1_0.city,cp1_0.country,cp1_0.email,cp1_0.first_name,cp1_0.last_name,cp1_0.phone,cp1_0.postal_code,cp1_0.state from customerprofile cp1_0 where cp1_0.first_name=? and cp1_0.last_name=?
 2026-03-29T22:03:59.276-07:00  WARN 9408 --- [customerprofile-api] [http-nio-8085-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.customerprofile.exception.CustomerProfileNotFoundException: No customer profiles found with name: first test]
+2026-03-29T22:54:28.453-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Starting CustomerprofileApiApplication using Java 21.0.2 with PID 6464 (C:\Users\vinum\Documents\GitProjects\customerprofile-api\build\classes\java\main started by vinum in C:\Users\vinum\Documents\GitProjects\customerprofile-api)
+2026-03-29T22:54:28.470-07:00 DEBUG 6464 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-03-29T22:54:28.480-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : The following 1 profile is active: "sit"
+2026-03-29T22:54:28.690-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9090
+2026-03-29T22:54:28.691-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=customerprofile-api, profiles=[default], label=null, version=5fcece3ead4d5dc93b9d3488e9fbbd3252f4b10d, state=
+2026-03-29T22:54:28.693-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9090
+2026-03-29T22:54:28.694-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=customerprofile-api, profiles=[sit], label=null, version=5fcece3ead4d5dc93b9d3488e9fbbd3252f4b10d, state=
+2026-03-29T22:54:28.703-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-29T22:54:28.705-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-29T22:54:31.124-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-29T22:54:31.318-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 172 ms. Found 1 JPA repository interface.
+2026-03-29T22:54:32.385-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1f25b4ae-fa0e-376d-a496-7a91d84d4dfe
+2026-03-29T22:54:33.619-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8085 (http)
+2026-03-29T22:54:33.668-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-29T22:54:33.670-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-03-29T22:54:33.886-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5180 ms
+2026-03-29T22:54:34.570-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-29T22:54:35.033-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b03f08c
+2026-03-29T22:54:35.038-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-29T22:54:35.184-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-29T22:54:35.374-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-03-29T22:54:36.814-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-29T22:54:37.258-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-29T22:54:39.406-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-29T22:54:39.421-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29T22:54:39.587-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-29T22:54:43.031-07:00  WARN 6464 --- [customerprofile-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-29T22:54:44.800-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2026-03-29T22:54:45.004-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8085 (http) with context path '/'
+2026-03-29T22:54:45.053-07:00  INFO 6464 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Started CustomerprofileApiApplication in 21.416 seconds (process running for 23.102)
+2026-03-29T22:54:45.324-07:00  WARN 6464 --- [customerprofile-api] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-29T22:54:45.327-07:00  WARN 6464 --- [customerprofile-api] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-29T22:59:00.085-07:00  INFO 6464 --- [customerprofile-api] [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29T22:59:00.086-07:00  INFO 6464 --- [customerprofile-api] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-29T22:59:00.089-07:00  INFO 6464 --- [customerprofile-api] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-29T22:59:00.645-07:00  INFO 6464 --- [customerprofile-api] [http-nio-8085-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 310 ms
+2026-03-29T22:59:06.452-07:00 DEBUG 6464 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.SQL                        : select cp1_0.customer_id,cp1_0.account_status,cp1_0.address_line1,cp1_0.address_line2,cp1_0.city,cp1_0.country,cp1_0.created_at,cp1_0.date_of_birth,cp1_0.email,cp1_0.first_name,cp1_0.gender,cp1_0.is_active,cp1_0.last_name,cp1_0.phone,cp1_0.postal_code,cp1_0.state,cp1_0.updated_at from customerprofile cp1_0 where cp1_0.email=?
+2026-03-29T22:59:06.561-07:00 DEBUG 6464 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.SQL                        : insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2026-03-29T22:59:06.592-07:00  WARN 6464 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23514
+2026-03-29T22:59:06.593-07:00  WARN 6464 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.orm.jdbc.error             : ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"
+  Detail: Failing row contains (8, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 22:59:06.55368-07, 2026-03-29 22:59:06.55368-07).
+2026-03-29T22:59:06.610-07:00 ERROR 6464 --- [customerprofile-api] [http-nio-8085-exec-5] c.c.service.CustomerProfileServiceImpl   : Database constraint violation while creating customer profile
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"
+  Detail: Failing row contains (8, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 22:59:06.55368-07, 2026-03-29 22:59:06.55368-07).] [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [customerprofile_account_status_check]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:169) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:131) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.translateExceptionIfPossible(HibernateExceptionTranslator.java:105) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:223) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:576) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:346) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:157) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:166) ~[spring-data-jpa-4.0.4.jar:4.0.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222) ~[spring-aop-7.0.6.jar:7.0.6]
+	at jdk.proxy4/jdk.proxy4.$Proxy164.save(Unknown Source) ~[na:na]
+	at com.customerprofile.service.CustomerProfileServiceImpl.createCustomerProfile(CustomerProfileServiceImpl.java:117) ~[main/:na]
+	at com.customerprofile.controller.CustomerProfileController.createCustomerProfile(CustomerProfileController.java:53) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"
+  Detail: Failing row contains (8, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 22:59:06.55368-07, 2026-03-29 22:59:06.55368-07).] [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:73) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:184) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:103) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:45) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:66) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:180) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:120) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:84) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:667) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:270) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:371) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:285) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:215) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:133) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:144) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:90) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:74) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:50) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:692) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:675) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-7.0.6.jar:7.0.6]
+	at jdk.proxy4/jdk.proxy4.$Proxy158.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityHandlerInvocationHandler.invokeMethod(SharedEntityManagerCreator.java:240) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:386) ~[spring-orm-7.0.6.jar:7.0.6]
+	at jdk.proxy4/jdk.proxy4.$Proxy158.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:664) ~[spring-data-jpa-4.0.4.jar:4.0.4]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:278) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:545) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:290) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:690) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:171) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135) ~[spring-tx-7.0.6.jar:7.0.6]
+	... 53 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"
+  Detail: Failing row contains (8, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 22:59:06.55368-07, 2026-03-29 22:59:06.55368-07).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:157) ~[postgresql-42.7.10.jar:42.7.10]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-7.0.2.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:181) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	... 106 common frames omitted
+
+2026-03-29T22:59:06.641-07:00  WARN 6464 --- [customerprofile-api] [http-nio-8085-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.customerprofile.exception.CustomerProfileNotFoundException: Error creating customer profile: could not execute statement [ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"<EOL>  Detail: Failing row contains (8, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 22:59:06.55368-07, 2026-03-29 22:59:06.55368-07).] [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [customerprofile_account_status_check]]
+2026-03-29T23:00:39.553-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Starting CustomerprofileApiApplication using Java 21.0.2 with PID 24760 (C:\Users\vinum\Documents\GitProjects\customerprofile-api\build\classes\java\main started by vinum in C:\Users\vinum\Documents\GitProjects\customerprofile-api)
+2026-03-29T23:00:39.557-07:00 DEBUG 24760 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-03-29T23:00:39.559-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : The following 1 profile is active: "sit"
+2026-03-29T23:00:39.656-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9090
+2026-03-29T23:00:39.657-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=customerprofile-api, profiles=[default], label=null, version=5fcece3ead4d5dc93b9d3488e9fbbd3252f4b10d, state=
+2026-03-29T23:00:39.659-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9090
+2026-03-29T23:00:39.659-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=customerprofile-api, profiles=[sit], label=null, version=5fcece3ead4d5dc93b9d3488e9fbbd3252f4b10d, state=
+2026-03-29T23:00:39.664-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-29T23:00:39.664-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-29T23:00:41.500-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-29T23:00:41.592-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interface.
+2026-03-29T23:00:42.147-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1f25b4ae-fa0e-376d-a496-7a91d84d4dfe
+2026-03-29T23:00:43.168-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8085 (http)
+2026-03-29T23:00:43.193-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-29T23:00:43.194-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-03-29T23:00:43.300-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3635 ms
+2026-03-29T23:00:43.836-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-29T23:00:44.092-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1fae07f8
+2026-03-29T23:00:44.095-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-29T23:00:44.169-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-29T23:00:44.348-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-03-29T23:00:45.413-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-29T23:00:45.612-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-29T23:00:46.834-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-29T23:00:46.850-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29T23:00:47.137-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-29T23:00:48.989-07:00  WARN 24760 --- [customerprofile-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-29T23:00:50.101-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2026-03-29T23:00:50.248-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8085 (http) with context path '/'
+2026-03-29T23:00:50.269-07:00  INFO 24760 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Started CustomerprofileApiApplication in 13.699 seconds (process running for 14.709)
+2026-03-29T23:00:50.381-07:00  WARN 24760 --- [customerprofile-api] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-29T23:00:50.382-07:00  WARN 24760 --- [customerprofile-api] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-29T23:00:56.367-07:00  INFO 24760 --- [customerprofile-api] [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29T23:00:56.367-07:00  INFO 24760 --- [customerprofile-api] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-29T23:00:56.372-07:00  INFO 24760 --- [customerprofile-api] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-03-29T23:00:57.087-07:00  INFO 24760 --- [customerprofile-api] [http-nio-8085-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 473 ms
+2026-03-29T23:01:02.332-07:00 DEBUG 24760 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.SQL                        : select cp1_0.customer_id,cp1_0.account_status,cp1_0.address_line1,cp1_0.address_line2,cp1_0.city,cp1_0.country,cp1_0.created_at,cp1_0.date_of_birth,cp1_0.email,cp1_0.first_name,cp1_0.gender,cp1_0.is_active,cp1_0.last_name,cp1_0.phone,cp1_0.postal_code,cp1_0.state,cp1_0.updated_at from customerprofile cp1_0 where cp1_0.email=?
+2026-03-29T23:01:02.424-07:00 DEBUG 24760 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.SQL                        : insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+2026-03-29T23:01:02.441-07:00  WARN 24760 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23514
+2026-03-29T23:01:02.443-07:00  WARN 24760 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.orm.jdbc.error             : ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"
+  Detail: Failing row contains (9, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 23:01:02.415941-07, 2026-03-29 23:01:02.415941-07).
+2026-03-29T23:01:02.461-07:00 ERROR 24760 --- [customerprofile-api] [http-nio-8085-exec-5] c.c.service.CustomerProfileServiceImpl   : Database constraint violation while creating customer profile
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"
+  Detail: Failing row contains (9, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 23:01:02.415941-07, 2026-03-29 23:01:02.415941-07).] [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [customerprofile_account_status_check]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:169) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:131) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.translateExceptionIfPossible(HibernateExceptionTranslator.java:105) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:223) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:576) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:346) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:157) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:166) ~[spring-data-jpa-4.0.4.jar:4.0.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222) ~[spring-aop-7.0.6.jar:7.0.6]
+	at jdk.proxy4/jdk.proxy4.$Proxy164.save(Unknown Source) ~[na:na]
+	at com.customerprofile.service.CustomerProfileServiceImpl.createCustomerProfile(CustomerProfileServiceImpl.java:117) ~[main/:na]
+	at com.customerprofile.controller.CustomerProfileController.createCustomerProfile(CustomerProfileController.java:53) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"
+  Detail: Failing row contains (9, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 23:01:02.415941-07, 2026-03-29 23:01:02.415941-07).] [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:73) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:184) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:103) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:45) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:66) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:180) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:120) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:84) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:667) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:270) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:371) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:285) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:215) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:133) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:144) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:90) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:74) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:50) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:692) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:675) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-7.0.6.jar:7.0.6]
+	at jdk.proxy4/jdk.proxy4.$Proxy158.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityHandlerInvocationHandler.invokeMethod(SharedEntityManagerCreator.java:240) ~[spring-orm-7.0.6.jar:7.0.6]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:386) ~[spring-orm-7.0.6.jar:7.0.6]
+	at jdk.proxy4/jdk.proxy4.$Proxy158.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:664) ~[spring-data-jpa-4.0.4.jar:4.0.4]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:278) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:545) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:290) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:690) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:171) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-4.0.4.jar:4.0.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130) ~[spring-tx-7.0.6.jar:7.0.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.6.jar:7.0.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135) ~[spring-tx-7.0.6.jar:7.0.6]
+	... 53 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"
+  Detail: Failing row contains (9, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 23:01:02.415941-07, 2026-03-29 23:01:02.415941-07).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196) ~[postgresql-42.7.10.jar:42.7.10]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:157) ~[postgresql-42.7.10.jar:42.7.10]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-7.0.2.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:181) ~[hibernate-core-7.2.7.Final.jar:7.2.7.Final]
+	... 106 common frames omitted
+
+2026-03-29T23:01:02.494-07:00  WARN 24760 --- [customerprofile-api] [http-nio-8085-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.customerprofile.exception.CustomerProfileNotFoundException: Error creating customer profile: could not execute statement [ERROR: new row for relation "customerprofile" violates check constraint "customerprofile_account_status_check"<EOL>  Detail: Failing row contains (9, string, string, string, string, string, string, string, string, string, string, 2026-03-30, string, t, string, 2026-03-29 23:01:02.415941-07, 2026-03-29 23:01:02.415941-07).] [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [customerprofile_account_status_check]]
+2026-03-29T23:01:11.023-07:00 DEBUG 24760 --- [customerprofile-api] [http-nio-8085-exec-6] org.hibernate.SQL                        : select cp1_0.customer_id,cp1_0.account_status,cp1_0.address_line1,cp1_0.address_line2,cp1_0.city,cp1_0.country,cp1_0.created_at,cp1_0.date_of_birth,cp1_0.email,cp1_0.first_name,cp1_0.gender,cp1_0.is_active,cp1_0.last_name,cp1_0.phone,cp1_0.postal_code,cp1_0.state,cp1_0.updated_at from customerprofile cp1_0
+2026-03-29T23:14:44.664-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Starting CustomerprofileApiApplication using Java 21.0.2 with PID 1848 (C:\Users\vinum\Documents\GitProjects\customerprofile-api\build\classes\java\main started by vinum in C:\Users\vinum\Documents\GitProjects\customerprofile-api)
+2026-03-29T23:14:44.670-07:00 DEBUG 1848 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-03-29T23:14:44.673-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : The following 1 profile is active: "sit"
+2026-03-29T23:14:44.853-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9090
+2026-03-29T23:14:44.855-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=customerprofile-api, profiles=[default], label=null, version=5fcece3ead4d5dc93b9d3488e9fbbd3252f4b10d, state=
+2026-03-29T23:14:44.860-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9090
+2026-03-29T23:14:44.863-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=customerprofile-api, profiles=[sit], label=null, version=5fcece3ead4d5dc93b9d3488e9fbbd3252f4b10d, state=
+2026-03-29T23:14:44.868-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-29T23:14:44.869-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-29T23:14:46.820-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-29T23:14:46.924-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 1 JPA repository interface.
+2026-03-29T23:14:47.378-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1f25b4ae-fa0e-376d-a496-7a91d84d4dfe
+2026-03-29T23:14:48.440-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8085 (http)
+2026-03-29T23:14:48.511-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-29T23:14:48.536-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-03-29T23:14:48.752-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3881 ms
+2026-03-29T23:14:49.201-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-29T23:14:49.557-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1fae07f8
+2026-03-29T23:14:49.560-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-29T23:14:49.634-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-29T23:14:49.773-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-03-29T23:14:50.634-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-29T23:14:50.774-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: postgres/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-29T23:14:51.911-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-29T23:14:51.926-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29T23:14:52.062-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-29T23:14:53.804-07:00  WARN 1848 --- [customerprofile-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-29T23:14:55.040-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2026-03-29T23:14:55.202-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8085 (http) with context path '/'
+2026-03-29T23:14:55.235-07:00  INFO 1848 --- [customerprofile-api] [restartedMain] c.c.CustomerprofileApiApplication        : Started CustomerprofileApiApplication in 14.413 seconds (process running for 15.822)
+2026-03-29T23:14:55.382-07:00  WARN 1848 --- [customerprofile-api] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-29T23:14:55.382-07:00  WARN 1848 --- [customerprofile-api] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-29T23:15:02.668-07:00  INFO 1848 --- [customerprofile-api] [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29T23:15:02.668-07:00  INFO 1848 --- [customerprofile-api] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-29T23:15:02.672-07:00  INFO 1848 --- [customerprofile-api] [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-03-29T23:15:03.347-07:00  INFO 1848 --- [customerprofile-api] [http-nio-8085-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 408 ms
+2026-03-29T23:15:11.977-07:00 DEBUG 1848 --- [customerprofile-api] [http-nio-8085-exec-5] org.hibernate.SQL                        : select cp1_0.customer_id,cp1_0.account_status,cp1_0.address_line1,cp1_0.address_line2,cp1_0.city,cp1_0.country,cp1_0.created_at,cp1_0.date_of_birth,cp1_0.email,cp1_0.first_name,cp1_0.gender,cp1_0.is_active,cp1_0.last_name,cp1_0.phone,cp1_0.postal_code,cp1_0.state,cp1_0.updated_at from customerprofile cp1_0 where cp1_0.email=?
+2026-03-29T23:15:12.053-07:00  WARN 1848 --- [customerprofile-api] [http-nio-8085-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.customerprofile.exception.CustomerProfileNotFoundException: accountStatus must be 'active', 'suspended', or 'inactive']
+2026-03-29T23:15:38.752-07:00 DEBUG 1848 --- [customerprofile-api] [http-nio-8085-exec-6] org.hibernate.SQL                        : select cp1_0.customer_id,cp1_0.account_status,cp1_0.address_line1,cp1_0.address_line2,cp1_0.city,cp1_0.country,cp1_0.created_at,cp1_0.date_of_birth,cp1_0.email,cp1_0.first_name,cp1_0.gender,cp1_0.is_active,cp1_0.last_name,cp1_0.phone,cp1_0.postal_code,cp1_0.state,cp1_0.updated_at from customerprofile cp1_0 where cp1_0.email=?
+2026-03-29T23:15:38.799-07:00 DEBUG 1848 --- [customerprofile-api] [http-nio-8085-exec-6] org.hibernate.SQL                        : insert into customerprofile (account_status,address_line1,address_line2,city,country,created_at,date_of_birth,email,first_name,gender,is_active,last_name,phone,postal_code,state,updated_at) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)

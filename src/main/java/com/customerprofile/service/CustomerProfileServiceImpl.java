@@ -3,6 +3,7 @@ package com.customerprofile.service;
 import com.customerprofile.entity.CustomerProfile;
 import com.customerprofile.exception.CustomerProfileNotFoundException;
 import com.customerprofile.model.CustomerProfileDTO;
+import com.customerprofile.model.CustomerProfileRequest;
 import com.customerprofile.repository.CustomerProfileRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,6 +85,48 @@ public class CustomerProfileServiceImpl implements CustomerProfileService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public CustomerProfileDTO createCustomerProfile(CustomerProfileRequest request) throws CustomerProfileNotFoundException {
+        if (request == null || request.getFirstName() == null || request.getFirstName().trim().isEmpty() ||
+            request.getLastName() == null || request.getLastName().trim().isEmpty() ||
+            request.getEmail() == null || request.getEmail().trim().isEmpty()) {
+            throw new CustomerProfileNotFoundException("firstName, lastName, and email are required");
+        }
+
+        if (customerProfileRepository.findByEmail(request.getEmail()).isPresent()) {
+            throw new CustomerProfileNotFoundException("Customer profile already exists with email: " + request.getEmail());
+        }
+
+        String accountStatus = request.getAccountStatus() != null ? request.getAccountStatus().trim().toLowerCase() : "active";
+        if (!accountStatus.equals("active") && !accountStatus.equals("suspended") && !accountStatus.equals("inactive")) {
+            throw new CustomerProfileNotFoundException("accountStatus must be 'active', 'suspended', or 'inactive'");
+        }
+
+        try {
+            CustomerProfile profile = new CustomerProfile();
+            profile.setFirstName(request.getFirstName());
+            profile.setLastName(request.getLastName());
+            profile.setEmail(request.getEmail());
+            profile.setPhone(request.getPhone());
+            profile.setAddressLine1(request.getAddressLine1());
+            profile.setAddressLine2(request.getAddressLine2());
+            profile.setCity(request.getCity());
+            profile.setState(request.getState());
+            profile.setPostalCode(request.getPostalCode());
+            profile.setCountry(request.getCountry() != null ? request.getCountry() : "USA");
+            profile.setDateOfBirth(request.getDateOfBirth());
+            profile.setGender(request.getGender());
+            profile.setIsActive(request.getIsActive() != null ? request.getIsActive() : true);
+            profile.setAccountStatus(accountStatus);
+
+            CustomerProfile savedProfile = customerProfileRepository.save(profile);
+            return mapToDTO(savedProfile);
+        } catch (DataIntegrityViolationException e) {
+            logger.error("Database constraint violation while creating customer profile", e);
+            throw new CustomerProfileNotFoundException("Error creating customer profile: " + e.getRootCause().getMessage());
+        }
+    }
+
     private CustomerProfileDTO mapToDTO(CustomerProfile profile) {
         CustomerProfileDTO dto = new CustomerProfileDTO();
         dto.setId(profile.getId());
@@ -97,6 +140,12 @@ public class CustomerProfileServiceImpl implements CustomerProfileService {
         dto.setState(profile.getState());
         dto.setPostalCode(profile.getPostalCode());
         dto.setCountry(profile.getCountry());
+        dto.setDateOfBirth(profile.getDateOfBirth());
+        dto.setGender(profile.getGender());
+        dto.setIsActive(profile.getIsActive());
+        dto.setAccountStatus(profile.getAccountStatus());
+        dto.setCreatedAt(profile.getCreatedAt());
+        dto.setUpdatedAt(profile.getUpdatedAt());
         return dto;
     }
 }

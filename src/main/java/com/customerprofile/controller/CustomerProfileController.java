@@ -2,6 +2,7 @@ package com.customerprofile.controller;
 
 import com.customerprofile.exception.CustomerProfileNotFoundException;
 import com.customerprofile.model.CustomerProfileDTO;
+import com.customerprofile.model.CustomerProfileRequest;
 import com.customerprofile.service.CustomerProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,5 +46,11 @@ public class CustomerProfileController {
     public ResponseEntity<List<CustomerProfileDTO>> getCustomerProfilesByFullName(@RequestParam String firstName, @RequestParam String lastName) throws CustomerProfileNotFoundException {
         List<CustomerProfileDTO> profiles = customerProfileService.findByFullName(firstName, lastName);
         return new ResponseEntity<>(profiles, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<CustomerProfileDTO> createCustomerProfile(@RequestBody CustomerProfileRequest request) throws CustomerProfileNotFoundException {
+        CustomerProfileDTO profile = customerProfileService.createCustomerProfile(request);
+        return new ResponseEntity<>(profile, HttpStatus.CREATED);
     }
 }

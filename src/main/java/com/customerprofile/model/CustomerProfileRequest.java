@@ -4,12 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 
 @Getter
 @Setter
-public class CustomerProfileDTO {
-    private Long id;
+public class CustomerProfileRequest {
     private String firstName;
     private String lastName;
     private String email;
@@ -24,6 +22,4 @@ public class CustomerProfileDTO {
     private String gender;
     private Boolean isActive;
     private String accountStatus;
-    private OffsetDateTime createdAt;
-    private OffsetDateTime updatedAt;
 }

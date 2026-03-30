@@ -3,6 +3,11 @@ package com.customerprofile.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "customerprofile")
@@ -38,4 +43,23 @@ public class CustomerProfile {
     private String postalCode;
 
     private String country;
+
+    @Column(name="date_of_birth")
+    private LocalDate dateOfBirth;
+
+    private String gender;
+
+    @Column(name="is_active")
+    private Boolean isActive;
+
+    @Column(name="account_status")
+    private String accountStatus;
+
+    @CreationTimestamp
+    @Column(name="created_at", nullable = false, updatable = false)
+    private OffsetDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name="updated_at", nullable = false)
+    private OffsetDateTime updatedAt;
 }

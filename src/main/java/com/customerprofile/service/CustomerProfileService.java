@@ -2,6 +2,7 @@ package com.customerprofile.service;
 
 import com.customerprofile.exception.CustomerProfileNotFoundException;
 import com.customerprofile.model.CustomerProfileDTO;
+import com.customerprofile.model.CustomerProfileRequest;
 
 import java.util.List;
 
@@ -11,4 +12,5 @@ public interface CustomerProfileService {
     List<CustomerProfileDTO> findByFirstName(String firstName) throws CustomerProfileNotFoundException;
     List<CustomerProfileDTO> findByLastName(String lastName) throws CustomerProfileNotFoundException;
     List<CustomerProfileDTO> findByFullName(String firstName, String lastName) throws CustomerProfileNotFoundException;
+    CustomerProfileDTO createCustomerProfile(CustomerProfileRequest request) throws CustomerProfileNotFoundException;
 }
