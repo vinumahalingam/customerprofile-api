@@ -53,4 +53,10 @@ public class CustomerProfileController {
         CustomerProfileDTO profile = customerProfileService.createCustomerProfile(request);
         return new ResponseEntity<>(profile, HttpStatus.CREATED);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<CustomerProfileDTO> updateCustomerProfile(@PathVariable String id, @RequestBody CustomerProfileRequest request) throws CustomerProfileNotFoundException {
+        CustomerProfileDTO profile = customerProfileService.updateCustomerProfile(id, request);
+        return new ResponseEntity<>(profile, HttpStatus.OK);
+    }
 }

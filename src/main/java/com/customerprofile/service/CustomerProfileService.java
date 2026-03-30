@@ -13,4 +13,5 @@ public interface CustomerProfileService {
     List<CustomerProfileDTO> findByLastName(String lastName) throws CustomerProfileNotFoundException;
     List<CustomerProfileDTO> findByFullName(String firstName, String lastName) throws CustomerProfileNotFoundException;
     CustomerProfileDTO createCustomerProfile(CustomerProfileRequest request) throws CustomerProfileNotFoundException;
+    CustomerProfileDTO updateCustomerProfile(String id, CustomerProfileRequest request) throws CustomerProfileNotFoundException;
 }
