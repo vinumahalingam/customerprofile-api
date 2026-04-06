@@ -19,7 +19,7 @@ public class CustomerProfileController {
     private CustomerProfileService customerProfileService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<CustomerProfileDTO> getCustomerProfileById(@PathVariable String id) throws CustomerProfileNotFoundException {
+    public ResponseEntity<CustomerProfileDTO> getCustomerProfileById(@PathVariable("id") String id) throws CustomerProfileNotFoundException {
         CustomerProfileDTO profile = customerProfileService.findByID(id);
         return new ResponseEntity<>(profile, HttpStatus.OK);
     }
@@ -31,19 +31,19 @@ public class CustomerProfileController {
     }
 
     @GetMapping("/search/firstName/{firstName}")
-    public ResponseEntity<List<CustomerProfileDTO>> getCustomerProfilesByFirstName(@PathVariable String firstName) throws CustomerProfileNotFoundException {
+    public ResponseEntity<List<CustomerProfileDTO>> getCustomerProfilesByFirstName(@PathVariable("firstName") String firstName) throws CustomerProfileNotFoundException {
         List<CustomerProfileDTO> profiles = customerProfileService.findByFirstName(firstName);
         return new ResponseEntity<>(profiles, HttpStatus.OK);
     }
 
     @GetMapping("/search/lastName/{lastName}")
-    public ResponseEntity<List<CustomerProfileDTO>> getCustomerProfilesByLastName(@PathVariable String lastName) throws CustomerProfileNotFoundException {
+    public ResponseEntity<List<CustomerProfileDTO>> getCustomerProfilesByLastName(@PathVariable("lastName") String lastName) throws CustomerProfileNotFoundException {
         List<CustomerProfileDTO> profiles = customerProfileService.findByLastName(lastName);
         return new ResponseEntity<>(profiles, HttpStatus.OK);
     }
 
     @GetMapping("/search/fullName")
-    public ResponseEntity<List<CustomerProfileDTO>> getCustomerProfilesByFullName(@RequestParam String firstName, @RequestParam String lastName) throws CustomerProfileNotFoundException {
+    public ResponseEntity<List<CustomerProfileDTO>> getCustomerProfilesByFullName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) throws CustomerProfileNotFoundException {
         List<CustomerProfileDTO> profiles = customerProfileService.findByFullName(firstName, lastName);
         return new ResponseEntity<>(profiles, HttpStatus.OK);
     }
@@ -55,8 +55,13 @@ public class CustomerProfileController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CustomerProfileDTO> updateCustomerProfile(@PathVariable String id, @RequestBody CustomerProfileRequest request) throws CustomerProfileNotFoundException {
+    public ResponseEntity<CustomerProfileDTO> updateCustomerProfile(@PathVariable("id") String id, @RequestBody CustomerProfileRequest request) throws CustomerProfileNotFoundException {
         CustomerProfileDTO profile = customerProfileService.updateCustomerProfile(id, request);
         return new ResponseEntity<>(profile, HttpStatus.OK);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCustomerProfile(@PathVariable("id") String id) throws CustomerProfileNotFoundException {
+        customerProfileService.deleteCustomerProfile(id);
+        return new ResponseEntity<>("Customer profile deleted successfully", HttpStatus.OK);
     }
 }
